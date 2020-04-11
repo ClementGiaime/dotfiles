@@ -13,6 +13,7 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 alias lisa='ls -lisa'
+
 LS_COLOR_THEME='trapd00r'
 
 alias grep='grep --color=auto'
@@ -54,8 +55,7 @@ export COLOR_LIGHT_GRAY='\e[0;37m'
 
 
 #------------ Prompt ------------#
-PS1=" $COLOR_RED\w $COLOR_BLUE>$COLOR_LIGHT_BLUE>$COLOR_NC " # ~ >>
-
+PS1=" $COLOR_RED\w $COLOR_BLUE>$COLOR_LIGHT_BLUE>$COLOR_NC \[$(tput sgr0)\]"
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -64,10 +64,8 @@ fi
 
 LS_COLOR_PATH="$HOME/.lscolors/${LS_COLOR_THEME}.discolors"
 
-echo $LS_COLOR_PATH
 
 if [[ -f $LS_COLOR_PATH ]]; then
-    echo $LS_COLOR_PATH
     eval $(dircolors -b $LS_COLOR_PATH)
 else
     eval $(dircolors)
