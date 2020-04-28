@@ -55,7 +55,7 @@ export COLOR_LIGHT_GRAY='\e[0;37m'
 
 
 #------------ Prompt ------------#
-PS1=" $COLOR_RED\w $COLOR_BLUE>$COLOR_LIGHT_BLUE>$COLOR_NC \[$(tput sgr0)\]"
+PS1=" \[${COLOR_RED}\]\w \[${COLOR_BLUE}\]>\[${COLOR_LIGHT_BLUE}\]>\[${COLOR_NC}\] "
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
