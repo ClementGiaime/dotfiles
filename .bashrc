@@ -9,9 +9,11 @@ alias mv='mv -i'
 alias json='python3 -m json.tool'
 
 alias ls='ls --color=auto'
-alias ll='ls -l'
+export LS_OPTIONS='--color=auto'
+alias ls='ls $LS_OPTIONS'
+alias ll='ls $LS_OPTIONS -l'
 alias la='ls -A'
-alias l='ls -CF'
+alias l='ls $LS_OPTIONS -lA'
 alias lisa='ls -lisa'
 
 LS_COLOR_THEME='trapd00r'
